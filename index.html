@@ -41,54 +41,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Data Analysis Journey</title>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
-    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/1.5.2/dist/bundled/theme/material.css">
-    <script src="https://cdn.holoviz.org/panel/1.5.2/dist/panel.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of [Your Name] - Showcasing projects and skills in [Your Field].">
+    <meta name="keywords" content="portfolio, [Your Name], [Your Field], projects, contact">
+    <meta name="author" content="[Your Name]">
+    <title>[Your Name] - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        #panel-container { max-width: 800px; margin: auto; }
+        /* Reset and Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: #f4f4f4; }
+        a { text-decoration: none; color: #007bff; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { background: #fff; padding: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-size: 24px; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { font-size: 18px; color: #333; padding: 10px; }
+        nav ul li a:hover { color: #007bff; }
+
+        /* Hero Section */
+        #hero { background: #007bff; color: #fff; padding: 100px 0; text-align: center; }
+        #hero h2 { font-size: 48px; margin-bottom: 10px; }
+        #hero p { font-size: 24px; }
+
+        /* Portfolio Section */
+        #portfolio { padding: 50px 0; }
+        #portfolio h2 { text-align: center; margin-bottom: 40px; font-size: 36px; }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .project:hover { transform: translateY(-5px); }
+        .project img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+        .project h3 { font-size: 24px; margin-bottom: 10px; }
+        .project p { margin-bottom: 15px; }
+        .project a { display: inline-block; background: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px; }
+        .project a:hover { background: #0056b3; }
+
+        /* About Section */
+        #about { padding: 50px 0; background: #fff; }
+        #about h2 { text-align: center; margin-bottom: 40px; font-size: 36px; }
+        .about-content { display: flex; align-items: center; gap: 40px; }
+        .about-content img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; }
+        .about-content p { font-size: 18px; margin-bottom: 20px; }
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skills span { background: #007bff; color: #fff; padding: 5px 10px; border-radius: 5px; }
+
+        /* Contact Section */
+        #contact { padding: 50px 0; }
+        #contact h2 { text-align: center; margin-bottom: 40px; font-size: 36px; }
+        form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        form input, form textarea { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        form button { background: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        form button:hover { background: #0056b3; }
+
+        /* Footer */
+        footer { background: #333; color: #fff; padding: 20px 0; text-align: center; }
+        footer a { color: #fff; margin: 0 10px; }
+        footer a:hover { color: #007bff; }
+
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-    <h1>My Data Analysis Journey</h1>
-    <div id="panel-container"></div>
+    <nav>
+        <div class="container">
+            <h1>[Your Name]</h1>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <script type="text/python" id="python-script">
-import panel as pn
-import pyodide
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Showcasing my work in [Your Field]</p>
+        </div>
+    </section>
 
-pn.extension()
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="projects">
+                <!-- Project 1 -->
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project, technologies used, and your role.</p>
+                    <a href="https://example.com" target="_blank">View Project</a>
+                </div>
+                <!-- Project 2 -->
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Brief description of the project, technologies used, and your role.</p>
+                    <a href="https://example.com" target="_blank">View Project</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
 
-# Define a simple Panel app
-slider = pn.widgets.IntSlider(name='Select a Number', start=0, end=100, value=50)
-text = pn.widgets.TextInput(value='50', disabled=True)
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="https://via.placeholder.com/200" alt="[Your Name]">
+                <div>
+                    <p>Hi, I'm [Your Name], a [Your Profession] with expertise in [Your Skills]. I specialize in [Your Specialization].</p>
+                    <p>Skills:</p>
+                    <div class="skills">
+                        <span>Skill 1</span>
+                        <span>Skill 2</span>
+                        <span>Skill 3</span>
+                        <!-- Add more skills -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-# Update text when slider changes
-def update_text(event):
-    text.value = str(event.new)
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-slider.param.watch(update_text, 'value')
-
-# Create layout
-layout = pn.Column(slider, text)
-
-# Serve the Panel app to the DOM
-layout.servable(target='panel-container')
-    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <!-- Add more social links -->
+        </div>
+    </footer>
 
     <script>
-        async function main() {
-            let pyodide = await loadPyodide();
-            await pyodide.loadPackage('micropip');
-            await pyodide.runPythonAsync(`
-                import micropip
-                await micropip.install('panel')
-            `);
-            let pythonScript = document.getElementById('python-script').text;
-            await pyodide.runPythonAsync(pythonScript);
-        }
-        main();
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
